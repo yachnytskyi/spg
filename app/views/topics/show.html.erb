@@ -1,0 +1,15 @@
+
+<div class="columns">
+  <div class="column is-8">
+    <h1 class="title is-1"><%= @topic.title %></h1>
+    <h3 class="title is-3"><%= @topic.body %></h3>
+      <h3 class="pt1 title is-5"><%= link_to @topic.category.title, @topic.category %></h3>
+
+      <h3 class="title is-3"><%= @topic.user.name %></h3>
+
+
+    <p class="pb3 border-bottom">Topic created <%= time_ago_in_words(@topic.created_at) %> ago</p>
+
+
+  </div>
+</div>

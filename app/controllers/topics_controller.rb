@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = current_user.topic.build
+    @topic = current_user.topics.build
   end
 
   def edit
@@ -47,7 +47,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic.destroy
     respond_to do |format|
-      format.html { redirect_to topic_url, notice: 'Topic was successfully destroyed.' }
+      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -63,7 +63,7 @@ class TopicsController < ApplicationController
   end
 
   def topics_params
-    params.require(:topic).permit(:title, :body, :category_id)
+    params.require(:topic).permit(:title, :body, :category_id, :user_id)
   end
 
 end
