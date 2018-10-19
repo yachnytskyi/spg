@@ -4,7 +4,7 @@
 
     <% if @topic.errors.any? %>
       <div class="errors">
-        <p><%= @topic.errors.count %> Prevented this category from saving</p>
+        <p><%= @topic.errors.count %> Prevented this topic from saving</p>
         <ul>
           <% @topic.errors.full_messages.each do |msg| %>
             <li><%= msg  %></li>

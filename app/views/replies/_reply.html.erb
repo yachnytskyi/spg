@@ -1,0 +1,12 @@
+<div class="reply-content">
+  <br>
+    <h3 class="pt1 title is-5"><%= reply.body %></h3>
+    <h3 class="pt1 title is-5"><%=  reply.user.name %></h3>
+    <p class="pb3 border-bottom">Topic created <%= time_ago_in_words(@topic.created_at) %> ago</p>
+
+  <% if reply_author(reply) %>
+    <%= link_to "Edit reply: #{reply.body}", edit_topic_reply_path(reply.topic, reply), class: 'button is-danger' %>
+    <% end %>
+
+
+</div>

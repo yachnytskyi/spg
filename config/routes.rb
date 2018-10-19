@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root to: 'topics#index'
 
   resources :categories
-  resources :topics
-  
+
+  resources :topics do
+    resources :replies
+  end
+
 end
