@@ -1,5 +1,7 @@
   <h1 class="title is-1">Categories</h1>
-   <%= link_to 'New Category', new_category_path, class:'btn btn-dark' %>
+  <% if user_signed_in? %>
+    <%= link_to 'New Category', new_category_path, class:'btn btn-dark' %>
+  <% end %>
     <div class="row">
         <% @categories.each do |category| %>
           <div class="col-sm">
