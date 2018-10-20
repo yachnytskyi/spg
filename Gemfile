@@ -69,6 +69,7 @@ gem 'cancancan', '~> 2.1', '>= 2.1.3'
 gem 'bulma-rails'
 gem 'simple_form'
 gem 'sidekiq'
+gem 'kramdown'
 group :development, :test do
   gem 'better_errors'
   gem 'guard'

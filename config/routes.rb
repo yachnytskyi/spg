@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     resources :replies
   end
 
+  resources :conversations do
+    resources :messages
+  end
+
 end

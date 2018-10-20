@@ -4,10 +4,21 @@
     <h3 class="pt1 title is-5"><%=  reply.user.name %></h3>
     <p class="pb3 border-bottom">Topic created <%= time_ago_in_words(@topic.created_at) %> ago</p>
 
+    <% if user_signed_in? && current_user.id != reply.user_id %>
+      <%= link_to "Message #{reply.user.name}", conversations_path(sender_id: current_user.id, recipient_id: reply.user.id), method: 'post', class:"button is-link" %>
+    <% elsif user_signed_in? && current_user.id == reply.user_id  %>
+      <%= link_to "Conversations", conversations_path %>
+  <% else %>
+
+  <%= link_to "Sign up to message #{reply.user.name}", new_user_registration_path %>
+<% end %>
+
   <% if reply_author(reply) || has_role?(:admin) %>
     <%= link_to "Edit reply: #{reply.body}", edit_topic_reply_path(reply.topic, reply), class: 'button is-danger' %>
     <%= link_to "Delete reply #{reply.body}", [reply.topic, reply], method: :delete, data: {confirm: "Are you sure ?" }, class: 'button is-danger' %>
     <% end %>
+
+
 
 
 </div>

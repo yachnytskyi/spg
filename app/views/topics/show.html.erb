@@ -7,6 +7,15 @@
     <h3 class="title is-3"><%= @topic.user.name %></h3>
     <p class="pb3 border-bottom">Topic created <%= time_ago_in_words(@topic.created_at) %> ago</p>
 
+    <% if user_signed_in? && current_user.id != @topic.user_id %>
+      <%= link_to "Message #{@topic.user.name}", conversations_path(sender_id: current_user.id, recipient_id: @topic.user.id), method: 'post', class:"button is-link" %>
+    <% elsif user_signed_in? && current_user.id == @topic.user_id  %>
+      <%= link_to "Conversations", conversations_path %>
+  <% else %>
+
+  <%= link_to "Sign up to message #{@topic.user.name}", new_user_registration_path %>
+<% end %>
+
     <% if topic_author(@topic) || has_role?(:admin) %>
       <p class="f3 pb1">Author actions:</p>
       <%= link_to "Edit topic: #{@topic.title}", edit_topic_path(@topic), class: 'button is-danger' %>
