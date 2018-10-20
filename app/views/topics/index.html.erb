@@ -1,0 +1,16 @@
+<h1 class="title is-1">Topics</h1>
+<% if user_signed_in? || has_role?(:admin) %>
+ <%= link_to 'New Topic', new_topic_path, class:'btn btn-dark' %>
+ <% end %>
+  <div class="row">
+      <% @topics.each do |topic| %>
+        <div class="col-sm">
+          <%= render topic, topic: topic %>
+        </div>
+      <% end %>
+      <br> <br>
+          <% @categories.each do |category| %>
+            <div class="col-sm">
+              <%= render category, category: category %>
+          <% end %>
+  </div>
