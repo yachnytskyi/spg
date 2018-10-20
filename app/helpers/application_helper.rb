@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def has_role?(role)
+    current_user && current_user.has_role?(role)
+  end
+
   def markdown_to_html(text)
    Kramdown::Document.new(text, input: "GFM").to_html
   end

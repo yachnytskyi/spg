@@ -4,8 +4,9 @@
     <h3 class="pt1 title is-5"><%=  reply.user.name %></h3>
     <p class="pb3 border-bottom">Topic created <%= time_ago_in_words(@topic.created_at) %> ago</p>
 
-  <% if reply_author(reply) %>
+  <% if reply_author(reply) || has_role?(:admin) %>
     <%= link_to "Edit reply: #{reply.body}", edit_topic_reply_path(reply.topic, reply), class: 'button is-danger' %>
+    <%= link_to "Delete reply #{reply.body}", [reply.topic, reply], method: :delete, data: {confirm: "Are you sure ?" }, class: 'button is-danger' %>
     <% end %>
 
 

@@ -4,5 +4,6 @@ class Topic < ApplicationRecord
   has_many :replies, dependent: :destroy
 
   validates_presence_of :title, :body
+  resourcify
 
 end
