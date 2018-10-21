@@ -4,8 +4,12 @@ lock '3.11.0'
 set :application, 'spg'
 set :repo_url, 'git@github.com:yachnytskyi/spg.git'
 
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+set :ssh_options, {
+  forward_agent: true,
+  auth_methods: ["publickey"],
+  keys: ["#{Dir.home}/.ssh/Test.pem"]
+}
+
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/spg'
