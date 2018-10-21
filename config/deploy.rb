@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'spg'
-set :repo_url, '34.220.237.37'
+set :repo_url, 'git@github.com:yachnytskyi/spg.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
