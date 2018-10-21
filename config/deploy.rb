@@ -4,10 +4,14 @@ lock '3.11.0'
 set :application, 'spg'
 set :repo_url, 'git@github.com:yachnytskyi/spg.git'
 
+set :rbenv_path, '/home/deploy/.rbenv'
+
+set :pty, true
+
 set :ssh_options, {
   forward_agent: true,
   auth_methods: ["publickey"],
-  keys: ["#{Dir.home}/.ssh/Test.pem"]
+  keys: ["/home/kostyantyn/.ssh/Test.pem"]
 }
 
 

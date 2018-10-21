@@ -50,10 +50,10 @@
 # The server-based syntax can be used to override options:
 # ------------------------------------
 server "ec2-34-220-237-37.us-west-2.compute.amazonaws.com",
-user: "ubuntu",
+user: "deploy",
 roles: %w{web app},
 ssh_options: {
-user: "delply", # overrides user setting above
+user: "deploy", # overrides user setting above
 keys: %w(/home/kostyantyn/.ssh/Test.pem),
 forward_agent: false,
 auth_methods: %w(publickey password)
