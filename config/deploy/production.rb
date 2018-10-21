@@ -38,4 +38,4 @@ role :db,  %w{deploy@example.com}
 set :stage, :production
 
 # Replace 127.0.0.1 with your server's IP address!
-server 'ec2-34-220-237-37.us-west-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{web app}
+server 'ec2-34-220-237-37.us-west-2.compute.amazonaws.com', user: 'deploy', roles: %w{web app}
