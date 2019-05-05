@@ -23,8 +23,8 @@ tmp/
 vendor/  
 .babelrc   
 .gitignore   
-.postcssrc.yml    
-.ruby-version   
+.ruby-version  
+Capfile
 Gemfile   
 Gemfile.lock   
 README.md   
